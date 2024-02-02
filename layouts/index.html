@@ -1,5 +1,8 @@
 {{ define "main" }}
- <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+  <!-- alpo
+  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+  -->
+  <article class="cf pv3 pv4-l f4 w-70 lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
     {{ .Content }}
   </article>
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
@@ -12,7 +15,10 @@
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <!-- alpo
+   <div class="pa3 pa4-ns w-100 w-70-ns center">
+    -->
+    <div class="w-70">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
        {{ with .Site.GetPage "section" $section_name }}
           <h1 class="flex-none">
@@ -36,7 +42,11 @@
         <h1 class="f3">{{ i18n "more" }}</h1>
         {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first" on the outside */}}
         {{ range (first 4 (after $n_posts $section))  }}
+
+          <!-- alpo
           <h2 class="f5 fw4 mb4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "ml3" "mr3" }}">
+          -->
+          <h2 class="f5 fw4 {{ cond (eq $.Site.Language.LanguageDirection "rtl") "ml3" "mr3" }}">
             <a href="{{ .RelPermalink }}" class="link black dim">
               {{ .Title }}
             </a>
