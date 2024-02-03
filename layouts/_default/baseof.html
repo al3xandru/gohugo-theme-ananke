@@ -50,7 +50,7 @@
 
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
 
-    {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+    {{ block "header" . }}{{ partial "page-header.html" .}}{{ end }}
 
     <div id="main" class="w-100 pa2">
       <aside role="sidebar" class="fl w-30 pa2">
