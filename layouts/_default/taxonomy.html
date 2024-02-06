@@ -1,11 +1,14 @@
 {{ define "main" }}
+  <!-- alpo
   <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
+  -->
+  <article class="cf pv3 pv4-l">
+    <div class="measure-wide-l f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
       <p>{{ i18n "taxonomyPageList" . }}</p>
     </div>
   </article>
-  <div class="mw8 center">
-    <section class="flex-ns flex-wrap justify-around mt5">
+  <div class="mw8">
+    <section class="flex-ns flex-wrap justify-around pt2">
       {{ range  .Pages }}
         <div class="relative w-100  mb4">
           {{ .Render "summary" }}
