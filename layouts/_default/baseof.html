@@ -25,8 +25,8 @@
         {{- end -}}
       ">
     {{ end }}
-    {{ with .Params.google-site-verification | default .Site.Params.google-site-verification }}
-      <meta name="google-site-verification" content="{{ . }}" />
+    {{ with .Params.googleSiteVerification | default .Site.Params.googleSiteVerification }}
+      <meta name="googleSiteVerification" content="{{ . }}" />
     {{ end }}
 
     {{ partial "site-style.html" . }}
