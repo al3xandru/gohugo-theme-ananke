@@ -65,7 +65,7 @@
     {{ block "header" . }}{{ partial "page-header.html" .}}{{ end }}
 
     <div id="main" class="w-100 pa2">
-      <aside role="sidebar" class="fl w-30 mt4 mt5-l pt5">
+      <aside role="sidebar" class="fl w-30 mt4 mt5-l pt5 dn-m">
         <div class="fr mr5">
           {{ block "sidebar" . }}{{ partial "site-sidebar.html" . }}{{ end }}
         </div>
@@ -73,7 +73,7 @@
       <!-- alpo
         <main class="pb7" role="main">
       -->
-      <main class="fl w-70" role="main">
+      <main class="fl w-90 w-70-ns" role="main">
         {{ block "main" . }}{{ end }}
       </main>
       <div class="cb fn">&nbsp;</div>
