@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+     <h2>Linked articles</h2>
+     <p class="f4">Interesting links; sometimes with short commentary. </p>
+    <section class="cf f4 lh-copy">
+      <ul class="pl1 mt0 ft3 ph3" style="list-style-type: '&#128279 ';">
+      {{ range .Paginator.Pages }}
+      <li class="pb3"><a href="{{ .Params.Link }}" rel="external">{{ .Title }}</a> <span class="f6 ttu">({{ .Date | time.Format "Jan 2, 2006" }}</span>:  <a href="{{ .RelPermalink }}" title="Commentary on {{.Title}}" class="ttl f4 link">commentary</a>)</li>
+      {{ end }}
+      </ul>
+    </section>
+    {{ template "_internal/pagination.html" . }}
+  </article>
+{{ end }}
